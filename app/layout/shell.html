@@ -1,0 +1,16 @@
+<div class="jumbotron" ng-controller="ShellController">
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-header">
+        <header>
+          <h1 class="brand"><a ng-href="#/search">NEXT<span class="lighter">LIVE</span>SHOW</a></h1>
+        </header>
+      </div>
+      <ul class="main-nav pull-right">
+        <li><a ng-href="#/about" ng-class="{active: $route.current.activeTab === 'about'}">About</a></li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<div ng-view></div>

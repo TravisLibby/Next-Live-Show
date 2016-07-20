@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+        <h1 class="text-center tagline">Discover your next live performance.</h1>
+    </div>
+  </div>
+</div>
+
+<div class="container search">
+  <live-shows-search></live-shows-search>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 loader">
+      <live-shows-loader class="text-center" ng-if="isSearching"></live-shows-loader>
+      <p ng-if="!isSearching && !!shows.length" class="text-center">Showing results for {{ zipCode }}.</p>
+      <p class="text-center" ng-if="shows.length === 0 && !isSearching">Sorry, there are no shows in your area.</p>
+    </div>
+  </div>
+
+  <div class="row shows-list" ng-show="!isSearching">
+    <div class="list-group col-xs-8 col-xs-offset-2">
+      <div class="list-group-item" ng-repeat="show in shows">
+        <h4 class="list-group-item-heading">
+          <span ng-repeat="artist in show.Artists"><a ng-href="#/artist/{{ artist.Name }}">{{ artist.Name }}</a><span ng-show="!$last">, </span></span>
+        </h4>
+        <h5>{{ show.Date | date: 'medium'}}</h5>
+        <address>
+          <span ng-if="!show.Venue.Url">{{ show.Venue.Name }}</span>
+          <a ng-href="{{ show.Venue.Url }}" ng-if="show.Venue.Url" target="_blank">{{ show.Venue.Name }}</a><br />
+          {{ show.Venue.Address }}<br />
+          {{ show.Venue.City }}, {{ show.Venue.StateCode }} {{ show.Venue.ZipCode }}<br />
+        </address>
+        <i ng-if="!show.TicketUrl" class="text-muted">No link provided for ticket purchase.</i>
+        <a ng-if="show.TicketUrl" href="{{ show.TicketUrl }}" target="_blank" class="btn btn-primary btn-sm" role="button">Buy Tickets</a>
+      </div>
+    </div>
+  </div>
+</div>

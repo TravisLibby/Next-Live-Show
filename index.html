@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <title>Live Shows App</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,300,400italic" />
+    <link rel="stylesheet" href="styles/custom.css" />
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <script src="app/app.module.js"></script>
+    <script src="app/layout/shell.module.js"></script>
+    <script src="app/layout/shell.ctrl.js"></script>
+    <script src="app/component/search.component.module.js"></script>
+    <script src="app/component/search.view.js"></script>
+    <script src="app/search/search.module.js"></script>
+    <script src="app/search/search.ctrl.js"></script>
+    <script src="app/data/data.module.js"></script>
+    <script src="app/data/shows.svc.js"></script>
+    <script src="app/artist/artist.module.js"></script>
+    <script src="app/artist/artist.ctrl.js"></script>
+    <script src="app/data/artist.svc.js"></script>
+    <script src="app/component/loader.component.module.js"></script>
+    <script src="app/component/loader.view.js"></script>
+    <script src="app/data/dates.svc.js"></script>
+    <script src="app/data/localstorage.svc.js"></script>
+
+  </head>
+  <body>
+    <ng-include src="'app/layout/shell.html'"></ng-include>
+  </body>
+</html>

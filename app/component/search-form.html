@@ -1,0 +1,8 @@
+<form name="searchForm" ng-submit="search(zip, 2)" novalidate>
+  <div class="form-group">
+      <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+        <input type="text" class="form-control input-lg" ng-model="zip" placeholder="Enter your zip code" minlength="5" maxlength="5" required />
+        <button type="submit" class="btn btn-primary btn-lg" ng-disabled="searchPending || !searchForm.$valid">Submit</button>
+      </div>
+  </div>
+</form>
